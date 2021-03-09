@@ -1,0 +1,14 @@
+.banner{
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to right, rgba(141, 253, 253, 0.85), rgba(172, 244, 253, 0.85)), url(bg.view.jpg) 0 no-repeat;
+    background-size: cover;
+    color: rgb(0, 0, 0);
+    background-position: center;
+}
+.center{
+    margin: auto;
+    width: 15%;
+    padding: 1%;
+}
