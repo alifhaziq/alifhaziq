@@ -20,12 +20,8 @@ profile.makanan_kesukaan={
 //create array cars in property 3 cars
 var cars= ["honda" , "merc" , "bmw"]
 cars.push("proton" , 5 , false)
-cars.unshift("toyota" , "nnnn")
+cars.unshift("toyota" , "tesla")
 cars.splice(3,0,"lambo")
-
-cars.map(x =>{
-    console.log(typeof(x))
-})
 
 console.log(` name:${profile.Name} 
               Age: ${profile.Age} 
@@ -34,8 +30,6 @@ console.log(` name:${profile.Name}
               iSstillstudied:${profile.pelajaran.iSstillstudied}`)
 
 console.log(profile.location[1])
-
-
 
 // of guna untuk array sahaja dan terus dapat value //
 console.log("")
@@ -51,6 +45,10 @@ for(var data in profile.pelajaran.kos){
     console.log(profile.pelajaran.kos[data])
 }
 
+profile.location.map(x =>{
+    console.log(`location :${x}`)
+})
+
 console.log("")
 console.log(`ketinggian : ${profile.ketinggian}`)
 
@@ -61,8 +59,8 @@ minuman : ${profile.makanan_kesukaan.minuman}`)
 console.log("")
 console.log(cars)
 
-profile.location.map(x =>{
-    console.log(`location :${x}`)
+cars.map(x =>{
+    console.log(typeof(x))
 })
 
 console.log("")
