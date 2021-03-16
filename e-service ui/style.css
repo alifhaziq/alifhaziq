@@ -1,0 +1,14 @@
+.carousel-item img{
+    height: 750px;
+    object-fit: revert;
+}
+
+.card img{
+    height: 225px;
+    object-fit: revert;
+}
+
+.side{
+    position: absolute;
+    left: 85%;
+}
