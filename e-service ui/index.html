@@ -8,7 +8,7 @@
     <title>E-COMMERCE</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -27,22 +27,23 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">HOME <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.html" style="color: black;">HOME<span
+                            class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: black;">
                         PRODUCTS
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="shoes-1.html">SHOES</a>
-                        <a class="dropdown-item" href="#">GLASS</a>
-                        <a class="dropdown-item" href="#">STREETWEAR</a>
-                        <a class="dropdown-item" href="#">BRANCELET</a>
+                        <a class="dropdown-item" href="shoes-1.html">AIR JORDAN</a>
+                        <a class="dropdown-item" href="#">YEEZY</a>
+                        <a class="dropdown-item" href="#">NIKE</a>
+                        <a class="dropdown-item" href="#">ADIDAS</a>
                     </div>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: black;">
                         COSTUMER SERVICE
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -53,7 +54,7 @@
                     </div>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">CONTACT US</a>
+                    <a class="nav-link" href="#" style="color: black;">CONTACT US</a>
                 </li>
                 </li>
             </ul>
@@ -61,20 +62,56 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="#">
-                            <i class="fa fa-search fa" style="color: aliceblue;" aria-hidden="true" submit="submit">
+                            <i class="fa fa-search fa" style="color: black" aria-hidden="true" submit="submit">
                             </i>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
-                            <i class="fa fa-shopping-cart fa" style="color: aliceblue;" aria-hidden="true">
+                            <i class="fa fa-shopping-cart fa" style="color: black;" aria-hidden="true">
                             </i>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="fa fa-user fa" style="color: aliceblue;" aria-hidden="true">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModalcenter">
+                            <i class="fa fa-user fa" style="color: black" aria-hidden="true">
                             </i>
+                            <div class="modal fade" id="exampleModalcenter" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalcenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle" style="color: black;">
+                                                Login User</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1" style="color: black;">Email address</label>
+                                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                                        aria-describedby="emailHelp" placeholder="Enter email">
+                                                    <small id="emailHelp" class="form-text text-muted">We'll never share
+                                                        your email with anyone else.</small>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword1" style="color: black;">Password</label>
+                                                    <input type="password" class="form-control"
+                                                        id="exampleInputPassword1" placeholder="Password">
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            
+                                            <button type="button" class="btn btn-secondary"data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-danger">Sign Up</button>
+                                            <button type="button" class="btn btn-primary">Login</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </a>
                     </li>
                 </ul>
@@ -109,9 +146,9 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-    <br>
 
-    <div class="container">
+
+    <div class="container-fluid py-5">
         <div class="row">
             <div class="col-lg mr-auto">
                 <ul class="nav justify-content-center" id="myTab" role="tablist">
@@ -131,8 +168,6 @@
                         <a class="nav-link" href="shoes-1.html">More View >></a>
                     </li>
                 </ul>
-                
-
 
                 <!---navs for hot item--->
                 <div class="tab-content" id="myTabContent">
@@ -140,52 +175,53 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-3">
-                                    <div class="card">
-                                        <a href="/product/univercity-blue.html"><img src="pictures/university_blue.jpg"
-                                                class="card-img-top" alt="..."></a>
+                                    <div class="card product-card">
+                                        <a href="/product/univercity-blue.html" target="_blank">
+                                            <img src="pictures/university_blue.jpg" class="card-img-top" alt="...">
+                                        </a>
                                         <div class="card-body" style="color:black">
-                                            <h5 class="card-title">JORDAN 1 HIGH "UNIVERCITY BLUE"</h5>
+                                            <h5 class="card-title">JORDAN 1 HIGH "UNIVERSITY BLUE"</h5>
                                             <p class="card-text">RM1750.00</p>
                                             <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"
-                                                    aria-hidden="true"></i>Add To Cart</a>
+                                                    aria-hidden="true" style="padding: 5px;"></i>Add To Cart</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
-                                    <div class="card">
+                                    <div class="card product-card">
                                         <a href="product/psg.html"><img src="pictures/psg.jpg" class="card-img-top"
                                                 alt="..."></a>
                                         <div class="card-body" style="color:black">
-                                            <h5 class="card-title">JORDAN 1 HIGH ZOOM "PSG"</h5>
+                                            <h5 class="card-title">JORDAN 1 HIGH ZOOM<br> "PSG"</h5>
                                             <p class="card-text">RM1250.00</p>
                                             <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"
-                                                    aria-hidden="true"></i>Add To
+                                                    aria-hidden="true" style="padding: 5px;"></i>Add To
                                                 Cart</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
-                                    <div class="card">
+                                    <div class="card product-card">
                                         <a href="/product/mocha.html"><img src="pictures/mocha.jpg" class="card-img-top"
                                                 alt="..."></a>
                                         <div class="card-body" style=color:rgb(0,0,0)>
-                                            <h5 class="card-title">JORDAN 1 HIGH "MOCHA"</h5>
+                                            <h5 class="card-title">JORDAN 1 HIGH<br>"MOCHA"</h5>
                                             <p class="card-text">RM2300.00</p>
                                             <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"
-                                                    aria-hidden="true"></i>Add To
+                                                    aria-hidden="true" style="padding: 5px;"></i>Add To
                                                 Cart</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
-                                    <div class="card">
+                                    <div class="card product-card">
                                         <a href="/product/gold-volt.html"><img src="pictures/volt_gold.jpg"
                                                 class="card-img-top" alt="..."></a>
                                         <div class="card-body" style="color:black">
-                                            <h5 class="card-title">JORDAN 1 HIGH "GOLD VOLT"</h5>
+                                            <h5 class="card-title">JORDAN 1 HIGH<br>"GOLD VOLT"</h5>
                                             <p class="card-text">RM900.00</p>
                                             <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"
-                                                    aria-hidden="true"></i>Add To
+                                                    aria-hidden="true" style="padding: 5px;"></i>Add To
                                                 Cart</a>
                                         </div>
                                     </div>
@@ -198,51 +234,51 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-3">
-                                    <div class="card">
+                                    <div class="card product-card">
                                         <a href="/product/"><img src="pictures/patina.jpg" class="card-img-top"
                                                 alt="..."></a>
                                         <div class="card-body" style="color:black">
-                                            <h5 class="card-title">JORDAN 1 RETRO HIGH OG "PATINA"</h5>
+                                            <h5 class="card-title">JORDAN 1 HIGH "PATINA"</h5>
                                             <p class="card-text">RM1750.00</p>
                                             <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"
-                                                    aria-hidden="true"></i>Add To Cart</a>
+                                                    aria-hidden="true" style="padding: 5px;"></i>Add To Cart</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
-                                    <div class="card">
+                                    <div class="card product-card">
                                         <a href="product/psg.html"><img src="pictures/panda.jpg" class="card-img-top"
                                                 alt="..."></a>
                                         <div class="card-body" style="color:black">
                                             <h5 class="card-title">WMNS DUNK LOW "PANDA"</h5>
                                             <p class="card-text">RM1250.00</p>
                                             <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"
-                                                    aria-hidden="true"></i>Add To Cart</a>
+                                                    aria-hidden="true" style="padding: 5px;"></i>Add To Cart</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
-                                    <div class="card">
+                                    <div class="card product-card">
                                         <a href="/product/mocha.html"><img src="pictures/valentines.jpg"
                                                 class="card-img-top" alt="..."></a>
                                         <div class="card-body" style=color:rgb(0,0,0)>
                                             <h5 class="card-title">AIR FORCE 1 "VALENTINE'S DAY"</h5>
                                             <p class="card-text">RM2300.00</p>
                                             <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"
-                                                    aria-hidden="true"></i>Add To
+                                                    aria-hidden="true" style="padding: 5px;"></i>Add To
                                                 Cart</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
-                                    <div class="card">
+                                    <div class="card product-card">
                                         <a href="/product/gold-volt.html"><img src="pictures/invert-celtic.jpg"
                                                 class="card-img-top" alt="..."></a>
                                         <div class="card-body" style="color:black">
                                             <h5 class="card-title">DUNK HIGH "INVERT CELTIC"</h5>
                                             <p class="card-text">RM900.00</p>
                                             <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"
-                                                    aria-hidden="true"></i>Add To
+                                                    aria-hidden="true" style="padding: 5px;"></i>Add To
                                                 Cart</a>
                                         </div>
                                     </div>
@@ -256,52 +292,52 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-3">
-                                    <div class="card">
+                                    <div class="card product-card">
                                         <a href="/product/univercity-blue.html"><img src="pictures/rookie.jpg"
                                                 class="card-img-top" alt="..."></a>
                                         <div class="card-body" style="color:black">
-                                            <h5 class="card-title">JORDAN 1 HIGH ZOOM COMFORT " ROOKIE OF THE YEAR</h5>
+                                            <h5 class="card-title">JORDAN 1 HIGH ZOOM"ROOKIE 2021"</h5>
                                             <p class="card-text">RM1750.00</p>
                                             <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"
-                                                    aria-hidden="true"></i>Add To Cart</a>
+                                                    aria-hidden="true" style="padding: 5px;"></i>Add To Cart</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
-                                    <div class="card">
+                                    <div class="card product-card">
                                         <a href="product/psg.html"><img src="pictures/blue-fury.jpg"
                                                 class="card-img-top" alt="..."></a>
                                         <div class="card-body" style="color:black">
                                             <h5 class="card-title">DUNK LOW "BLUE FURY"</h5>
                                             <p class="card-text">RM1250.00</p>
                                             <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"
-                                                    aria-hidden="true"></i>Add To
+                                                    aria-hidden="true" style="padding: 5px;"></i>Add To
                                                 Cart</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
-                                    <div class="card">
+                                    <div class="card product-card">
                                         <a href="/product/mocha.html"><img src="pictures/brazil.jpg"
                                                 class="card-img-top" alt="..."></a>
                                         <div class="card-body" style=color:rgb(0,0,0)>
                                             <h5 class="card-title">DUNK LOW "BRAZIL 2020"</h5>
                                             <p class="card-text">RM2300.00</p>
                                             <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"
-                                                    aria-hidden="true"></i>Add To
+                                                    aria-hidden="true" style="padding: 5px;"></i>Add To
                                                 Cart</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
-                                    <div class="card">
+                                    <div class="card product-card">
                                         <a href="/product/gold-volt.html"><img src="pictures/bred.jpg"
                                                 class="card-img-top" alt="..."></a>
                                         <div class="card-body" style="color:black">
                                             <h5 class="card-title">JORDAN 1 LOW "REVERSE BRED"⁣⁣⁣</h5>
                                             <p class="card-text">RM900.00</p>
                                             <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"
-                                                    aria-hidden="true"></i>Add To
+                                                    aria-hidden="true" style="padding: 5px;"></i>Add To
                                                 Cart</a>
                                         </div>
                                     </div>
@@ -312,20 +348,19 @@
                 </div>
             </div>
         </div>
-        <br>
-        <hr>
 
-        <div class="container">
+        <div class="container py-5">
             <div class="row">
                 <div class="col-lg">
                     <img src="pictures/streetwear.jpg" class="card-img-top" alt="...">
                 </div>
             </div>
         </div>
-        <hr>
-        <br>
+    </div>
 
-        <div class="container">
+
+    <footer>
+        <div class="container py-5">
             <div class="row">
                 <div class="col-lg-3">
                     <h5>INFORMATION</h5>
@@ -354,7 +389,7 @@
                     <a href="">With List</a><br>
                 </div>
             </div>
-        </div><br>
+        </div>
 
         <div class="container">
             <div class="row">
@@ -374,7 +409,15 @@
                 </div>
             </div>
         </div>
-        <br>
-    </div>
+        <hr>
+
+        <div class="form">
+            <img src="/pictures/hype.png" style="width: 300px">
+            <hr>
+            <p><b>© 2020 HYPEKIDD . All right reserved .</b></p>
+            <br>
+        </div>
+    </footer>
 </body>
+
 </html>

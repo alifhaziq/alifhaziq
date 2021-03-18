@@ -1,14 +1,80 @@
 .carousel-item img{
-    height: 750px;
-    object-fit: revert;
-}
-
-.card img{
-    height: 225px;
+    height: 670px;
     object-fit: revert;
 }
 
 .side{
     position: absolute;
-    left: 85%;
+    left: 73%;
 }
+
+.product-card img{
+    height: 173px;
+    object-fit: contain;
+}
+a.btn {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: .5s;
+}
+h5.card-title,
+p.card-text,
+.icon {
+    opacity: 1;
+    transition: .5s;
+}
+
+.card:hover h5.card-title,
+.card:hover p.card-text,
+.card:hover .icon {
+    opacity: 0;
+}
+.card:hover a.btn {
+    top: 80%;
+    opacity: 1;
+}
+.card:hover .card-body {
+    background-color: black;
+    transition: .5s;
+}
+footer{
+    padding: auto;
+    display: block;
+    background-color: rgb(8, 106, 235);
+}
+
+a{
+    color: black;
+}
+
+.form{
+    text-align: center;
+    color: black;
+}
+
+.card-body-top{
+    margin-left: 15px;
+    padding-top: 15px;
+}
+
+.btn,
+p{
+    margin: 4px;
+    padding: 2px;   
+}
+
+.card-body-x{
+    padding: 0%;
+    margin: auto;
+}
+
+
+
+
+
+
+
