@@ -61,15 +61,20 @@ a{
     padding-top: 15px;
 }
 
-.btn,
-p{
+.sell,
+.btn{
     margin: 4px;
-    padding: 2px;   
+    padding: -1px;
+    text-align: center;   
 }
 
 .card-body-x{
     padding: 0%;
     margin: auto;
+}
+.last-sale{
+    padding-top: 50px;
+    padding-left: 10px;
 }
 
 
