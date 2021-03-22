@@ -67,6 +67,40 @@ console.log("")
 for(var data in cars)
 console.log(typeof(cars[data]))
 
+{
+    var size = 56
+    {
+        let size = 75
+        size = 10
+        console.log("size dalam block pink" , size) 
+    }
+    console.log("global",size)
+}
+
+var a = 10
+var name = "haziq"
+
+var data = a !=  15 ? 10 : false
+var check = name.length == 5 ? true : false
+console.log(name.length)
+
+{
+    var x = 8
+    console.log(x)
+
+    var y = x++
+    console.log(y)
+}
+
+{
+    var x = function myfunction(a, b){
+        return a;
+
+    }
+    console.log(x(4, 3))
+}
+
+
 
 //practice myself
 // var ptss={
