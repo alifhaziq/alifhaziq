@@ -167,43 +167,10 @@ else {
      console.log(c * d)
  }
 
- 
-//data types
-//  - String
-//  - Object
-//  - Array
-//  - Boolean
-//  - Number
+//practice 24/3/21
 
-//practice myself
-// var ptss={
-//     name: "politeknik tuanku syed sirajuddin",
-//     bandar:"arau",
-//     poskod:02600,
-//     negeri:"perlis",
-//     department:6,
-//     kos:{
-//         jkrv:["ddv" , "dds"],
-//         jtmk:"ddt",
-//         jph:["dfh", "dev" , "dht"],
-//         jpa:["dsk" , "dpm" , "da"],
-//         jke:["dtk" , "doe" , "dep"],
-//         jkm:"dkm"
-//     }
-// }
 
-// console.log (`  name:${ptss.name} 
-//                 Bandar:${ptss.department}`)
 
-// for (var data in ){
-//     console.log(`${ptss.kos[data]}`)
-// }   
 
-// for (var data of ptss.kos.jpa){
-//     console.log([data])
-// }
 
-// console.log(""),
-// ptss.kos.jke.map(x =>{
-//     console.log(`kos jke :${x}`)
-// })
+
