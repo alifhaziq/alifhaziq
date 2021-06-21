@@ -369,20 +369,121 @@ namespace practice_linq
             //    Console.WriteLine(areAllStudentsTeenAger);
 
             //contains operator
+            //{
+            //IList<Student> studentList = new List<Student>() {
+            //    new Student() { StudentID = 1, StudentName = "John", Age = 18 } ,
+            //    new Student() { StudentID = 2, StudentName = "Moin",  Age = 15 } ,
+            //    new Student() { StudentID = 3, StudentName = "Bill",  Age = 25 } ,
+            //    new Student() { StudentID = 4, StudentName = "Ram" , Age = 20 } ,
+            //    new Student() { StudentID = 5, StudentName = "Ron" , Age = 19 }
+            //};
+
+            //    Student std = new Student() { StudentID = 3, StudentName = "Bill" };
+
+            //    bool result = studentList.Contains(std, new StudentComparer());
+
+            //    Console.WriteLine(result);
+            //}
+
+
+            //aggregation
             {
-            IList<Student> studentList = new List<Student>() {
-                new Student() { StudentID = 1, StudentName = "John", Age = 18 } ,
-                new Student() { StudentID = 2, StudentName = "Moin",  Age = 15 } ,
-                new Student() { StudentID = 3, StudentName = "Bill",  Age = 25 } ,
-                new Student() { StudentID = 4, StudentName = "Ram" , Age = 20 } ,
-                new Student() { StudentID = 5, StudentName = "Ron" , Age = 19 }
-            };
+                IList<Student> studentList = new List<Student>() {
+            new Student() { StudentID = 1, StudentName = "John", Age = 13 } ,
+            new Student() { StudentID = 2, StudentName = "Moin",  Age = 21 } ,
+            new Student() { StudentID = 3, StudentName = "Bill",  Age = 18 } ,
+            new Student() { StudentID = 4, StudentName = "Ram" , Age = 20 } ,
+            new Student() { StudentID = 5, StudentName = "Ron" , Age = 15 }
+             };
 
-                Student std = new Student() { StudentID = 3, StudentName = "Bill" };
+                int SumOfStudentsAge = studentList.Aggregate<Student, int>(0, (age, s) => age += s.Age);
 
-                bool result = studentList.Contains(std, new StudentComparer());
+                Console.WriteLine(SumOfStudentsAge);
+            }
 
-                Console.WriteLine(result);
+
+            // average 
+            {
+                IList<Student> studentList = new List<Student>() {
+            new Student() { StudentID = 1, StudentName = "John", Age = 13 } ,
+            new Student() { StudentID = 2, StudentName = "Moin",  Age = 21 } ,
+            new Student() { StudentID = 3, StudentName = "Bill",  Age = 18 } ,
+            new Student() { StudentID = 4, StudentName = "Ram" , Age = 20 } ,
+            new Student() { StudentID = 5, StudentName = "Ron" , Age = 15 }
+                
+                };
+
+                var avgAge = studentList.Average(s => s.Age);
+
+                Console.WriteLine("Average Age of Student: {0}", avgAge);
+
+            }
+
+
+            //count operator
+            {
+                IList<Student> studentList = new List<Student>() {
+            new Student() { StudentID = 1, StudentName = "John", Age = 13 } ,
+            new Student() { StudentID = 2, StudentName = "Moin",  Age = 21 },
+            new Student() { StudentID = 3, StudentName = "Bill",  Age = 18 },
+            new Student() { StudentID = 4, StudentName = "Ram" , Age = 20 },
+            new Student() { StudentID = 5, StudentName = "Ron" , Age = 15 }
+                
+                };
+
+                var totalStudents = studentList.Count();
+
+                Console.WriteLine("Total Students: {0}", totalStudents);
+
+                var adultStudents = studentList.Count(s => s.Age >= 18);
+
+                Console.WriteLine("Number of Adult Students: {0}", adultStudents);
+
+            }
+
+            //max operator
+
+            {
+                IList<Student> studentList = new List<Student>() {
+            new Student() { StudentID = 1, StudentName = "John", Age = 13 } ,
+            new Student() { StudentID = 2, StudentName = "Moin",  Age = 21 } ,
+            new Student() { StudentID = 3, StudentName = "Bill",  Age = 18 } ,
+            new Student() { StudentID = 4, StudentName = "Ram" , Age = 20 } ,
+            new Student() { StudentID = 5, StudentName = "Ron" , Age = 15 }
+                    
+                };
+
+                var oldest = studentList.Max(s => s.Age);
+
+                Console.WriteLine("Oldest Student Age: {0}", oldest);
+
+            }
+
+            //sum operator
+
+            {
+                IList<Student> studentList = new List<Student>() {
+            new Student() { StudentID = 1, StudentName = "John", Age = 13 } ,
+            new Student() { StudentID = 2, StudentName = "Moin",  Age = 21 } ,
+            new Student() { StudentID = 3, StudentName = "Bill",  Age = 18 } ,
+            new Student() { StudentID = 4, StudentName = "Ram" , Age = 20 } ,
+            new Student() { StudentID = 5, StudentName = "Steve" , Age = 15 }
+                
+                };
+
+                var sumOfAge = studentList.Sum(s => s.Age);
+
+                Console.WriteLine("Sum of all student's age: {0}", sumOfAge);
+
+                var totalAdults = studentList.Sum(s => {
+
+                    if (s.Age >= 18)
+                        return 1;
+                    else
+                        return 0;
+                });
+
+                Console.WriteLine("Total Adult Students: {0}", totalAdults);
             }
 
         }
