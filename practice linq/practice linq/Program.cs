@@ -387,105 +387,295 @@ namespace practice_linq
 
 
             //aggregation
+            //{
+            //    IList<Student> studentList = new List<Student>() {
+            //new Student() { StudentID = 1, StudentName = "John", Age = 13 } ,
+            //new Student() { StudentID = 2, StudentName = "Moin",  Age = 21 } ,
+            //new Student() { StudentID = 3, StudentName = "Bill",  Age = 18 } ,
+            //new Student() { StudentID = 4, StudentName = "Ram" , Age = 20 } ,
+            //new Student() { StudentID = 5, StudentName = "Ron" , Age = 15 }
+            // };
+
+            //    int SumOfStudentsAge = studentList.Aggregate<Student, int>(0, (age, s) => age += s.Age);
+
+            //    Console.WriteLine(SumOfStudentsAge);
+            //}
+
+
+            //// average 
+            //{
+            //    IList<Student> studentList = new List<Student>() {
+            //new Student() { StudentID = 1, StudentName = "John", Age = 13 } ,
+            //new Student() { StudentID = 2, StudentName = "Moin",  Age = 21 } ,
+            //new Student() { StudentID = 3, StudentName = "Bill",  Age = 18 } ,
+            //new Student() { StudentID = 4, StudentName = "Ram" , Age = 20 } ,
+            //new Student() { StudentID = 5, StudentName = "Ron" , Age = 15 }
+
+            //    };
+
+            //    var avgAge = studentList.Average(s => s.Age);
+
+            //    Console.WriteLine("Average Age of Student: {0}", avgAge);
+
+            //}
+
+
+            ////count operator
+            //{
+            //    IList<Student> studentList = new List<Student>() {
+            //new Student() { StudentID = 1, StudentName = "John", Age = 13 } ,
+            //new Student() { StudentID = 2, StudentName = "Moin",  Age = 21 },
+            //new Student() { StudentID = 3, StudentName = "Bill",  Age = 18 },
+            //new Student() { StudentID = 4, StudentName = "Ram" , Age = 20 },
+            //new Student() { StudentID = 5, StudentName = "Ron" , Age = 15 }
+
+            //    };
+
+            //    var totalStudents = studentList.Count();
+
+            //    Console.WriteLine("Total Students: {0}", totalStudents);
+
+            //    var adultStudents = studentList.Count(s => s.Age >= 18);
+
+            //    Console.WriteLine("Number of Adult Students: {0}", adultStudents);
+
+            //}
+
+            ////max operator
+
+            //{
+            //    IList<Student> studentList = new List<Student>() {
+            //new Student() { StudentID = 1, StudentName = "John", Age = 13 } ,
+            //new Student() { StudentID = 2, StudentName = "Moin",  Age = 21 } ,
+            //new Student() { StudentID = 3, StudentName = "Bill",  Age = 18 } ,
+            //new Student() { StudentID = 4, StudentName = "Ram" , Age = 20 } ,
+            //new Student() { StudentID = 5, StudentName = "Ron" , Age = 15 }
+
+            //    };
+
+            //    var oldest = studentList.Max(s => s.Age);
+
+            //    Console.WriteLine("Oldest Student Age: {0}", oldest);
+
+            //}
+
+            ////sum operator
+
+            //{
+            //    IList<Student> studentList = new List<Student>() {
+            //new Student() { StudentID = 1, StudentName = "John", Age = 13 } ,
+            //new Student() { StudentID = 2, StudentName = "Moin",  Age = 21 } ,
+            //new Student() { StudentID = 3, StudentName = "Bill",  Age = 18 } ,
+            //new Student() { StudentID = 4, StudentName = "Ram" , Age = 20 } ,
+            //new Student() { StudentID = 5, StudentName = "Steve" , Age = 15 }
+
+            //    };
+
+            //    var sumOfAge = studentList.Sum(s => s.Age);
+
+            //    Console.WriteLine("Sum of all student's age: {0}", sumOfAge);
+
+            //    var totalAdults = studentList.Sum(s => {
+
+            //        if (s.Age >= 18)
+            //            return 1;
+            //        else
+            //            return 0;
+            //    });
+
+            //    Console.WriteLine("Total Adult Students: {0}", totalAdults);
+            //}
+
+            //elementof 
+
+            //{
+            //IList<int> intList = new List<int>() { 10, 21, 30, 45, 50, 87 };
+
+            //IList<string> strList = new List<string>() { "One", null, "Three", "Four", "Five" };		
+
+
+            //Console.WriteLine("1st Element in intList: {0}", intList.ElementAt(0));
+            //Console.WriteLine("1st Element in strList: {0}", strList.ElementAt(0));
+
+            //Console.WriteLine("2nd Element in intList: {0}", intList.ElementAt(1));
+            //Console.WriteLine("2nd Element in strList: {0}", strList.ElementAt(1));
+
+            //Console.WriteLine("3rd Element in intList: {0}", intList.ElementAtOrDefault(2));		
+            //Console.WriteLine("3rd Element in strList: {0}", strList.ElementAtOrDefault(2));		
+
+            //Console.WriteLine("10th Element in intList: {0} - default int value", intList.ElementAtOrDefault(9));		
+            //Console.WriteLine("10th Element in strList: {0} - default string value (null)", strList.ElementAtOrDefault(9));		
+
+
+            //Console.WriteLine("intList.ElementAt(9) throws an exception: Index out of range");
+            //Console.WriteLine("-------------------------------------------------------------");
+            //Console.WriteLine(intList.ElementAt(9));
+
+            //}
+
+            //{
+            //    IList<int> intList = new List<int>() { 7, 10, 21, 30, 45, 50, 87 };
+            //    IList<string> strList = new List<string>() { null, "Two", "Three", "Four", "Five" };
+            //    IList<string> emptyList = new List<string>();
+
+            //    Console.WriteLine("1st Element in intList: {0}", intList.First());
+            //    Console.WriteLine("1st Even Element in intList: {0}", intList.First(i => i % 2 == 0));
+
+            //    Console.WriteLine("1st Element in strList: ", strList.First());
+
+            //    Console.WriteLine("emptyList.First() throws an InvalidOperationException");
+            //    Console.WriteLine("-------------------------------------------------------------");
+            //    Console.WriteLine(emptyList.First());
+
+            //}
+
+            //{
+            //    IList<int> intList = new List<int>() { 7, 10, 21, 30, 45, 50, 87 };
+            //    IList<string> strList = new List<string>() { null, "Two", "Three", "Four", "Five" };
+            //    IList<string> emptyList = new List<string>();
+
+            //    Console.WriteLine("1st Element in intList: {0}", intList.FirstOrDefault());
+
+            //    Console.WriteLine("1st Even Element in intList: {0}", intList.FirstOrDefault(i => i % 2 == 0));
+
+            //    Console.WriteLine("1st Element in strList: {0}", strList.FirstOrDefault());
+
+            //    Console.WriteLine("1st Element in emptyList: {0}", emptyList.FirstOrDefault());
+
+            //}
+
+            // linq last
+            //{
+            //    IList<int> intList = new List<int>() { 7, 10, 21, 30, 45, 50, 87 };
+            //    IList<string> strList = new List<string>() { null, "Two", "Three", "Four", "Five" };
+            //    IList<string> emptyList = new List<string>();
+
+            //    Console.WriteLine("Last Element in intList: {0}", intList.Last());
+            //    Console.WriteLine("Last Even Element in intList: {0}", intList.Last(i => i % 2 == 0));
+
+            //    Console.WriteLine("Last Element in strList: {0}", strList.Last());
+
+            //    Console.WriteLine("emptyList.Last() throws an InvalidOperationException");
+            //    Console.WriteLine("-------------------------------------------------------------");
+            //    Console.WriteLine(emptyList.Last());
+
+            //}
+
+            //{
+            //    IList<int> intList = new List<int>() { 7, 10, 21, 30, 45, 50, 87 };
+            //    IList<string> strList = new List<string>() { null, "Two", "Three", "Four", "Five" };
+            //    IList<string> emptyList = new List<string>();
+
+            //    Console.WriteLine("Last Element in intList: {0}", intList.LastOrDefault());
+
+            //    Console.WriteLine("Last Even Element in intList: {0}",
+            //                      intList.LastOrDefault(i => i % 2 == 0));
+
+            //    Console.WriteLine("Last Element in strList: {0}", strList.LastOrDefault());
+
+            //    Console.WriteLine("Last Element in emptyList: {0}", emptyList.LastOrDefault());
+
+            //}
+
+            // single / singleordefault
+
+            //{
+            //    IList<int> oneElementList = new List<int>() { 7 };
+            //    IList<int> intList = new List<int>() { 7, 10, 21, 30, 45, 50, 87 };
+            //    IList<string> strList = new List<string>() { null, "Two", "Three", "Four", "Five" };
+            //    IList<string> emptyList = new List<string>();
+
+            //    //following throws error because list contains more than one element which is less than 100
+            //    Console.WriteLine("Element less than 100 in intList: {0}", intList.Single(i => i < 100));
+
+            //    //uncomment lines and check the result
+            //    //following throws error because list contains more than one element which is less than 100
+            //    //Console.WriteLine("Element less than 100 in intList: {0}", intList.SingleOrDefault(i => i < 100));
+
+            //    //following throws error because list contains more than one elements
+            //    //Console.WriteLine("The only Element in intList: {0}", intList.Single());
+
+            //    //following throws error because list contains more than one elements
+            //    //Console.WriteLine("The only Element in intList: {0}", intList.SingleOrDefault());
+
+            //    //following throws error because list does not contains any element
+            //    //Console.WriteLine("The only Element in emptyList: {0}", emptyList.Single());
+
+            //}
+
+            // sequenceEquel
+
+            //{
+            //    IList<string> strList1 = new List<string>() { "One", "Two", "Three", "Four", "Three" };
+
+            //    IList<string> strList2 = new List<string>() { "Three", "One", "Two", "Four", "Three" };
+
+            //    bool isEqual = strList1.SequenceEqual(strList2);
+
+            //    Console.WriteLine(isEqual);
+
+            //}
+
+
+            ////concat 
+            //{
+            //    IList<string> collection1 = new List<string>() { "One", "Two", "Three" };
+            //    IList<string> collection2 = new List<string>() { "Five", "Six" };
+
+            //    var concateResult = collection1.Concat(collection2);
+
+            //    foreach (string str in concateResult)
+            //        Console.WriteLine(str);
+
+            //}
+
+            //defaultifempty
+            //{
+            //    IList<Student> emptyStudentList = new List<Student>();
+
+            //    var newStudentList1 = emptyStudentList.DefaultIfEmpty();
+            //    var newStudentList2 = emptyStudentList.DefaultIfEmpty(new Student() { StudentID = 0, StudentName = "" });
+
+            //    Console.WriteLine("Count: {0} ", newStudentList1.Count());
+            //    Console.WriteLine("Student ID: {0} ", newStudentList1.ElementAt(0));
+
+            //    Console.WriteLine("Count: {0} ", newStudentList2.Count());
+            //    Console.WriteLine("Student ID: {0} ", newStudentList2.ElementAt(0).StudentID);
+
+            //}
+
+            //empty 
+            //{
+            //    var emptyCollection1 = Enumerable.Empty<string>();
+            //    var emptyCollection2 = Enumerable.Empty<Student>();
+
+            //    Console.WriteLine("Type: {0}", emptyCollection1.GetType().Name);
+            //    Console.WriteLine("Count: {0}", emptyCollection1.Count());
+
+            //    Console.WriteLine("Type: {0}", emptyCollection2.GetType().Name);
+            //    Console.WriteLine("Count: {0}", emptyCollection2.Count());
+
+            //}
+
+            ////range
+            //{
+            //    var intCollection = Enumerable.Range(10, 10);
+            //    Console.WriteLine("Total Count: {0} ", intCollection.Count());
+
+            //    for (int i = 0; i < intCollection.Count(); i++)
+            //        Console.WriteLine("Value at index {0} : {1}", i, intCollection.ElementAt(i));
+
+            //}
+
+            //repeat
             {
-                IList<Student> studentList = new List<Student>() {
-            new Student() { StudentID = 1, StudentName = "John", Age = 13 } ,
-            new Student() { StudentID = 2, StudentName = "Moin",  Age = 21 } ,
-            new Student() { StudentID = 3, StudentName = "Bill",  Age = 18 } ,
-            new Student() { StudentID = 4, StudentName = "Ram" , Age = 20 } ,
-            new Student() { StudentID = 5, StudentName = "Ron" , Age = 15 }
-             };
+                var intCollection = Enumerable.Repeat<int>(18, 7);
+                Console.WriteLine("Total Count: {0} ", intCollection.Count());
 
-                int SumOfStudentsAge = studentList.Aggregate<Student, int>(0, (age, s) => age += s.Age);
-
-                Console.WriteLine(SumOfStudentsAge);
-            }
-
-
-            // average 
-            {
-                IList<Student> studentList = new List<Student>() {
-            new Student() { StudentID = 1, StudentName = "John", Age = 13 } ,
-            new Student() { StudentID = 2, StudentName = "Moin",  Age = 21 } ,
-            new Student() { StudentID = 3, StudentName = "Bill",  Age = 18 } ,
-            new Student() { StudentID = 4, StudentName = "Ram" , Age = 20 } ,
-            new Student() { StudentID = 5, StudentName = "Ron" , Age = 15 }
-                
-                };
-
-                var avgAge = studentList.Average(s => s.Age);
-
-                Console.WriteLine("Average Age of Student: {0}", avgAge);
+                for (int i = 0; i < intCollection.Count(); i++)
+                    Console.WriteLine("Value at index {0} : {1}", i, intCollection.ElementAt(i));
 
             }
-
-
-            //count operator
-            {
-                IList<Student> studentList = new List<Student>() {
-            new Student() { StudentID = 1, StudentName = "John", Age = 13 } ,
-            new Student() { StudentID = 2, StudentName = "Moin",  Age = 21 },
-            new Student() { StudentID = 3, StudentName = "Bill",  Age = 18 },
-            new Student() { StudentID = 4, StudentName = "Ram" , Age = 20 },
-            new Student() { StudentID = 5, StudentName = "Ron" , Age = 15 }
-                
-                };
-
-                var totalStudents = studentList.Count();
-
-                Console.WriteLine("Total Students: {0}", totalStudents);
-
-                var adultStudents = studentList.Count(s => s.Age >= 18);
-
-                Console.WriteLine("Number of Adult Students: {0}", adultStudents);
-
-            }
-
-            //max operator
-
-            {
-                IList<Student> studentList = new List<Student>() {
-            new Student() { StudentID = 1, StudentName = "John", Age = 13 } ,
-            new Student() { StudentID = 2, StudentName = "Moin",  Age = 21 } ,
-            new Student() { StudentID = 3, StudentName = "Bill",  Age = 18 } ,
-            new Student() { StudentID = 4, StudentName = "Ram" , Age = 20 } ,
-            new Student() { StudentID = 5, StudentName = "Ron" , Age = 15 }
-                    
-                };
-
-                var oldest = studentList.Max(s => s.Age);
-
-                Console.WriteLine("Oldest Student Age: {0}", oldest);
-
-            }
-
-            //sum operator
-
-            {
-                IList<Student> studentList = new List<Student>() {
-            new Student() { StudentID = 1, StudentName = "John", Age = 13 } ,
-            new Student() { StudentID = 2, StudentName = "Moin",  Age = 21 } ,
-            new Student() { StudentID = 3, StudentName = "Bill",  Age = 18 } ,
-            new Student() { StudentID = 4, StudentName = "Ram" , Age = 20 } ,
-            new Student() { StudentID = 5, StudentName = "Steve" , Age = 15 }
-                
-                };
-
-                var sumOfAge = studentList.Sum(s => s.Age);
-
-                Console.WriteLine("Sum of all student's age: {0}", sumOfAge);
-
-                var totalAdults = studentList.Sum(s => {
-
-                    if (s.Age >= 18)
-                        return 1;
-                    else
-                        return 0;
-                });
-
-                Console.WriteLine("Total Adult Students: {0}", totalAdults);
-            }
-
         }
     }
 }
