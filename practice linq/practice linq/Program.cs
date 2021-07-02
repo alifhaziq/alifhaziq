@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 
 namespace practice_linq
 {
@@ -26,8 +27,8 @@ namespace practice_linq
     {
         public bool Equals(Student x, Student y)
         {
-            if (x.StudentID == y.StudentID &&
-                     x.StudentName.ToLower() == y.StudentName.ToLower())
+            if (x.StudentID == y.StudentID
+                    && x.StudentName.ToLower() == y.StudentName.ToLower())
                 return true;
 
             return false;
@@ -35,12 +36,9 @@ namespace practice_linq
 
         public int GetHashCode(Student obj)
         {
-            return obj.GetHashCode();
+            return obj.StudentID.GetHashCode();
         }
     }
-
-
-
 
     public class Program
     {
@@ -69,6 +67,7 @@ namespace practice_linq
 
         //LAMBDA EXPRESSION
         //delegate bool IsTeenAger(Student stud);
+
         public static void Main()
         {
             //        linq  query ke array 
@@ -668,12 +667,217 @@ namespace practice_linq
             //}
 
             //repeat
-            {
-                var intCollection = Enumerable.Repeat<int>(18, 7);
-                Console.WriteLine("Total Count: {0} ", intCollection.Count());
+            //{
+            //    var intCollection = Enumerable.Repeat<int>(18, 7);
+            //    Console.WriteLine("Total Count: {0} ", intCollection.Count());
 
-                for (int i = 0; i < intCollection.Count(); i++)
-                    Console.WriteLine("Value at index {0} : {1}", i, intCollection.ElementAt(i));
+            //    for (int i = 0; i < intCollection.Count(); i++)
+            //        Console.WriteLine("Value at index {0} : {1}", i, intCollection.ElementAt(i));
+
+            //}
+
+            //distinct
+            //{
+            //    IList<Student> studentList = new List<Student>() {
+            //new Student() { StudentID = 1, StudentName = "John", Age = 18 } ,
+            //new Student() { StudentID = 2, StudentName = "Steve",  Age = 15 } ,
+            //new Student() { StudentID = 3, StudentName = "Bill",  Age = 25 } ,
+            //new Student() { StudentID = 3, StudentName = "Bill",  Age = 25 } ,
+            //new Student() { StudentID = 3, StudentName = "Bill",  Age = 25 } ,
+            //new Student() { StudentID = 3, StudentName = "Bill",  Age = 25 } ,
+            //new Student() { StudentID = 5, StudentName = "Ron" , Age = 19 }
+            //    };
+
+
+            //    var distinctStudents = studentList.Distinct(new StudentComparer());
+
+            //    foreach (var std in distinctStudents)
+            //        Console.WriteLine(std.StudentName);
+
+            //}
+
+            //except
+            //{
+            //    IList<Student> studentList1 = new List<Student>() {
+            //new Student() { StudentID = 1, StudentName = "John", Age = 18 } ,
+            //new Student() { StudentID = 2, StudentName = "Steve",  Age = 15 } ,
+            //new Student() { StudentID = 3, StudentName = "Bill",  Age = 25 } ,
+            //new Student() { StudentID = 5, StudentName = "Ron" , Age = 19 }
+            //    };
+
+            //    IList<Student> studentList2 = new List<Student>() {
+            //new Student() { StudentID = 3, StudentName = "Bill",  Age = 25 } ,
+            //new Student() { StudentID = 5, StudentName = "Ron" , Age = 19 } ,
+            //new Student() { StudentID = 6, StudentName = "Ram" , Age = 29 }
+            //    };
+
+            //    var resultedCol = studentList2.Except(studentList1, new StudentComparer());
+
+            //    foreach (Student std in resultedCol)
+            //        Console.WriteLine(std.StudentName);
+            //}
+
+            //intersect
+            //{
+            //    IList<Student> studentList1 = new List<Student>() {
+            //new Student() { StudentID = 1, StudentName = "John", Age = 18 } ,
+            //new Student() { StudentID = 2, StudentName = "Steve",  Age = 15 } ,
+            //new Student() { StudentID = 3, StudentName = "Bill",  Age = 25 } ,
+            //new Student() { StudentID = 5, StudentName = "Ron" , Age = 19 }
+            //    };
+
+            //    IList<Student> studentList2 = new List<Student>() {
+            //    new Student() { StudentID = 3, StudentName = "Bill",  Age = 25 } ,
+            //    new Student() { StudentID = 5, StudentName = "Ron" , Age = 19 } ,
+            //    new Student() { StudentID = 6, StudentName = "Ram" , Age = 29 }
+            //    };
+
+            //    var resultedCol = studentList1.Intersect(studentList2, new StudentComparer());
+
+            //    foreach (Student std in resultedCol)
+            //        Console.WriteLine(std.StudentName);
+            //}
+
+            //union
+            //{
+            //    IList<Student> studentList1 = new List<Student>() {
+            //new Student() { StudentID = 1, StudentName = "John", Age = 18 } ,
+            //new Student() { StudentID = 2, StudentName = "Steve",  Age = 15 } ,
+            //new Student() { StudentID = 3, StudentName = "Bill",  Age = 25 } ,
+            //new Student() { StudentID = 5, StudentName = "Ron" , Age = 19 }
+            //    };
+
+            //    IList<Student> studentList2 = new List<Student>() {
+            //    new Student() { StudentID = 3, StudentName = "Bill",  Age = 25 } ,
+            //    new Student() { StudentID = 5, StudentName = "Ron" , Age = 19 }
+            //     };
+
+            //    var result = studentList1.Union(studentList2, new StudentComparer());
+
+            //    foreach (var std in result)
+            //        Console.WriteLine(std.StudentName);
+
+            //}
+
+            //skip method
+            //{
+            //    IList<string> strList = new List<string>() { "One", "Two", "Three", "Four", "Five" };
+
+            //    var result = strList.Skip(2);
+
+            //    foreach (var str in result)
+            //        Console.WriteLine(str);
+
+            //}
+
+            //{
+            //    IList<string> strList = new List<string>() {
+            //"One",
+            //"Two",
+            //"Three",
+            //"Four",
+            //"Five",
+            //"Six"  };
+
+            //    var resultList = strList.SkipWhile((s, i) => s.Length > i);
+
+            //    foreach (string str in resultList)
+            //        Console.WriteLine(str);
+            //}
+
+            //{
+            //    IList<string> strList = new List<string>() { "One", "Two", "Three", "Four", "Five" };
+
+            //    var newList = strList.Take(2);
+
+            //    foreach (var str in newList)
+            //        Console.WriteLine(str);
+            //}
+
+            //{
+            //    IList<string> strList = new List<string>() {
+            //                                "One",
+            //                                "Two",
+            //                                "Three",
+            //                                "Four",
+            //                                "Five",
+            //                                "Six"  };
+
+            //    var resultList = strList.TakeWhile((s, i) => s.Length > i);
+
+            //    foreach (string str in resultList)
+            //        Console.WriteLine(str);
+
+            //}
+
+            {
+                IList<string> strList = new List<string>() {
+            "One",
+            "Two",
+            "Three",
+            "Four",
+            "Three"
+        };
+
+                Console.WriteLine("strList type: {0}", strList.GetType().Name);
+
+                string[] strArray = strList.ToArray<string>();// converts List to Array
+
+                Console.WriteLine("strArray type: {0}", strArray.GetType().Name);
+
+                IList<string> newList = strArray.ToList<string>(); // converts array into list
+
+                Console.WriteLine("newList type: {0}", newList.GetType().Name);
+
+            }
+
+            {
+                IList<Student> studentList = new List<Student>() {
+                    new Student() { StudentID = 1, StudentName = "John", Age = 18 } ,
+                    new Student() { StudentID = 2, StudentName = "Steve",  Age = 21 } ,
+                    new Student() { StudentID = 3, StudentName = "Bill",  Age = 18 } ,
+                    new Student() { StudentID = 4, StudentName = "Ram" , Age = 20 } ,
+                    new Student() { StudentID = 5, StudentName = "Ron" , Age = 21 }
+                };
+
+                //following converts list into dictionary where StudentId is a key
+                IDictionary<int, Student> studentDict = studentList.ToDictionary<Student, int>(s => s.StudentID);
+
+                foreach (var key in studentDict.Keys)
+                    Console.WriteLine("Key: {0}, Value: {1}", key, (studentDict[key] as Student).StudentName);
+            }
+
+            {
+                Expression<Func<Student, bool>> isTeenAgerExpr = s => s.Age > 12 && s.Age < 20;
+
+                //compile Expression using Compile method to invoke it as Delegate
+                Func<Student, bool> isTeenAger = isTeenAgerExpr.Compile();
+
+                //Invoke
+                bool result = isTeenAger(new Student() { StudentID = 1, StudentName = "Steve", Age = 20 });
+
+                Console.WriteLine(result);
+            }
+
+            {
+                ParameterExpression pe = Expression.Parameter(typeof(Student), "s");
+
+                MemberExpression me = Expression.Property(pe, "Age");
+
+                ConstantExpression constant = Expression.Constant(18, typeof(int));
+
+                BinaryExpression body = Expression.GreaterThanOrEqual(me, constant);
+
+                var ExpressionTree = Expression.Lambda<Func<Student, bool>>(body, new[] { pe });
+
+
+                Console.WriteLine("Expression Tree: {0}", ExpressionTree);
+
+                Console.WriteLine("Expression Tree Body: {0}", ExpressionTree.Body);
+
+                Console.WriteLine("Number of Parameters in Expression Tree: {0}", ExpressionTree.Parameters.Count);
+
+                Console.WriteLine("Parameters in Expression Tree: {0}", ExpressionTree.Parameters[0]);
 
             }
         }
